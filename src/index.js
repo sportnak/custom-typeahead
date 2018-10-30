@@ -274,6 +274,9 @@ class App extends React.Component {
   }
 }
 
+const rowHeight = 36;
+const optionsHeight = 300;
+
 class Typeahead extends React.Component {
   static propTypes = {
     /**
@@ -358,10 +361,10 @@ class Typeahead extends React.Component {
         this.focusedOption.current.offsetTop >
         this.dropdownOptions.current.clientHeight +
           this.dropdownOptions.current.scrollTop -
-          36
+          rowHeight
       ) {
         this.dropdownOptions.current.scrollTop =
-          this.focusedOption.current.offsetTop + 36 - 300;
+          this.focusedOption.current.offsetTop + rowHeight - optionsHeight;
       } else if (
         this.focusedOption.current.offsetTop <
         this.dropdownOptions.current.scrollTop
